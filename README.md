@@ -1,1 +1,1 @@
-# This is for the helper files
+These are helper files to install PlotUtils in standalone mode
