@@ -1,0 +1,40 @@
+# SJ: Using UPS distribution GPVM Instllation 
+# One can use this in their Local Linux distributions
+# You need to install ROOT6, CLHEP, Boost and you use
+# this make file you are done. 
+# Use the script provided to source the enviroment
+#
+# I tested with Ubintu, SL and MacOS
+#
+EXTERNALINCLUDES := -I$(MINERVAKERNELROOT) -I$(CLHEP_INC)
+INCLUDES := $(EXTERNALINCLUDES) -I. -I`root-config --incdir` -I./PlotUtils
+CXXFLAGS := `root-config --cflags` $(INCLUDES)
+LDFLAGS  := -shared `root-config --glibs` -lCling 
+
+# We're going to compile all the cxx files in PlotUtils/ into a library libplotutils.so
+SOURCES = $(wildcard PlotUtils/*.cxx)
+OBJS    = $(SOURCES:.cxx=.o)
+
+# How to make a .o file from a .cxx file
+%.o: %.cxx
+	g++ -g -Wformat=0 -DMNVROOT6=1 -DMNV_MnvRecoShifter_h=1 -DMNV_MnvRecoShifter_cxx -fPIC -c -o $@ $< $(CXXFLAGS) 
+
+# The target to be made when you just run 'make'
+all: libplotutils.so
+
+libplotutils.so: $(OBJS) plotutilsDict.o
+	g++ -o $@ $(LDFLAGS) $^
+
+# Make the reflex dictionary for all the PlotUtils classes. Phil found
+# this command by running the cmt make with 'make VERBOSE=1' and
+# copying the command from there. We need these dictionaries to be
+# able to use PlotUtils from python and to be able to read/write
+# PlotUtils classes to/from disk.
+#
+plotutilsDict.cxx: dict/PlotUtilsDict.h dict/PlotUtilsDictOSX.xml
+	genreflex dict/PlotUtilsDict.h -o plotutilsDict.cxx --gccxmlopt='--gccxml-compiler g++ ' --select=dict/PlotUtilsDict.xml   --rootmap=plotutilsDict.rootmap --rootmap-lib=libplotutilsDict --rootmap-lib=libplotutils  -D_GNU_SOURCE -DGAUDI_V20_COMPAT  $(INCLUDES) -DMNV_MnvRecoShifter_h=1 -DMNV_MnvRecoShifter_cxx 
+
+clean:
+	rm -f *.o *.so plotutilsDict.cxx PlotUtils/*.o
+
+.PHONY: clean
