@@ -10,15 +10,15 @@ The help document is available in MINERvA [DocDB](https://minerva-docdb.fnal.gov
 * First, install CMAKE, ROOT6 and BOOST, I assume you can do it by your own. 
   * If you need help there is a nice helper script to install it 
   * just type following in your terminal
-  * bash <(curl -fsSL http://hepsoft.satyajitjena.in)
+  * `bash <(curl -fsSL http://hepsoft.satyajitjena.in)`
   * Follow terminal instruction
 
 * You can download this [script](https://github.com/dsjena/PlotUtilsHelper/blob/master/install-cvs-version.sh)
-  * Before you run this script you must have your CMAKE, ROOT and BOOST set in your evn
-  * change the INSTALLPATH="/Users/sjena/HepSoft/minerva/InstallCvsVersion" to your choice
-  * type bash install-cvs-version.sh
+  * Before you run this script you must have your CMAKE, ROOT and BOOST set in your `env`
+  * change the `INSTALLPATH="/Users/sjena/HepSoft/minerva/InstallCvsVersion"` to your choice
+  * type `bash install-cvs-version.sh`
   * it should work fine
 
-* Manual Installation, Follow [DocDB](https://minerva-docdb.fnal.gov/cgi-bin/private/RetrieveFile?docid=25462), Same copy is also available in this repo.
+* Manual Installation, Follow [DocDB](https://minerva-docdb.fnal.gov/cgi-bin/private/RetrieveFile?docid=25462), Same copy is also available in this repositary.
 
-* Send me mail if you face some issues (perhaps you know my email id)
+* Send me mail if you face some issues (perhaps you know my `email` id)
