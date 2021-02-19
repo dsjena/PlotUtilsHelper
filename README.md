@@ -1,5 +1,5 @@
-# Readme
-These are helper script to install PlotUtils in standalone mode from CVS. This is to keep CVS version untouched. 
+# Brief description
+These are helper-scripts to install PlotUtils in standalone mode from CVS. While we are preparing a git supported PlotUtils, this help is to keep CVS version untouched. 
 
 Same script are available at MINERvA CVS @ Personal/sjena/plotutils
 
