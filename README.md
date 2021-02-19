@@ -15,6 +15,7 @@ The help document is available in MINERvA [DocDB](https://minerva-docdb.fnal.gov
 
 * You can download this [script](https://github.com/dsjena/PlotUtilsHelper/blob/master/install-cvs-version.sh)
   * Before you run this script you must have your `CMAKE`, `ROOT` and `BOOST` set in your `env`
+  * You must have a valide Kerberos token via kinit 
   * change the `INSTALLPATH="/Users/sjena/HepSoft/minerva/InstallCvsVersion"` to your choice
   * type `bash install-cvs-version.sh`
   * it should work fine
