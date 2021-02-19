@@ -1,10 +1,11 @@
+# Readme
 These are helper script to install PlotUtils in standalone mode from CVS. This is to keep CVS version untouched. 
 
 Same script are available at MINERvA CVS @ Personal/sjena/plotutils
 
 The help document is available in MINERvA [DocDB](https://minerva-docdb.fnal.gov/cgi-bin/private/RetrieveFile?docid=25462)
 
-# Breif Steps To install in Mac OS (Should work for linux but not tested)
+### Breif Steps To install in Mac OS (Should work for linux but not tested)
 
 * First, install CMAKE, ROOT6 and BOOST, I assume you can do it by your own. 
   * If you need help there is a nice helper script to install it 
