@@ -56,8 +56,9 @@ file=$PLOTUTILSPATH/Ana/PlotUtils/PlotUtils/VariableBase.h
 #sed -i "s|$match|$match\n$insertfile|g" $file
 
 #work arround to fix string and vector error
-awk 'NR==5{print "#include <string>\n\#include <vector>"}1' $file > tmp.h
-mv tmp.h $file
+# Added to VariableBase and commited
+#awk 'NR==5{print "#include <string>\n\#include <vector>"}1' $file > tmp.h
+#mv tmp.h $file
 
  
 cp $WD/Makefile.OsX $PLOTUTILSPATH/Ana/PlotUtils/Makefile
